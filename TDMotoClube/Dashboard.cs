@@ -159,7 +159,13 @@ namespace TDMotoClube
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0){
+
+        }
+
+        private void dataGridViewDashboard_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
                 DataGridViewRow row = this.dataGridViewDashboard.Rows[e.RowIndex];
                 textBoxNomeMotoClube.Text = row.Cells["NOME"].Value.ToString();
                 textBoxPresidente.Text = row.Cells["PRESIDENTE"].Value.ToString();
@@ -167,6 +173,7 @@ namespace TDMotoClube
                 textBoxEmail.Text = row.Cells["EMAIL"].Value.ToString();
                 textBoxCidade.Text = row.Cells["CIDADE"].Value.ToString();
                 comboBoxEstado.SelectedItem = row.Cells["ESTADO"].Value.ToString();
+                checkBoxTrofeu.Checked = (bool)row.Cells["TROFEU"].Value;
             }
         }
     }

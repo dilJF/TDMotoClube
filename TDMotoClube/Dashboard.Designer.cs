@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanelDashboard = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewDashboard = new System.Windows.Forms.DataGridView();
-            this.tBMOTOCLUBEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.MOTOCLUBESet = new TDMotoClube.MOTOCLUBESet();
             this.groupBoxDashboard = new System.Windows.Forms.GroupBox();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
@@ -60,15 +58,17 @@
             this.labelPresidente = new System.Windows.Forms.Label();
             this.textBoxNomeMotoClube = new System.Windows.Forms.TextBox();
             this.labelNomeMotoClube = new System.Windows.Forms.Label();
+            this.tBMOTOCLUBEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MOTOCLUBESet = new TDMotoClube.MOTOCLUBESet();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tB_MOTO_CLUBETableAdapter = new TDMotoClube.MOTOCLUBESetTableAdapters.TB_MOTO_CLUBETableAdapter();
             this.tBMOTOCLUBEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanelDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDashboard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBMOTOCLUBEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MOTOCLUBESet)).BeginInit();
             this.groupBoxDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBMOTOCLUBEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MOTOCLUBESet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBMOTOCLUBEBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,20 +98,13 @@
             this.dataGridViewDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanelDashboard.SetColumnSpan(this.dataGridViewDashboard, 2);
             this.dataGridViewDashboard.Location = new System.Drawing.Point(3, 295);
+            this.dataGridViewDashboard.MultiSelect = false;
             this.dataGridViewDashboard.Name = "dataGridViewDashboard";
             this.dataGridViewDashboard.ReadOnly = true;
+            this.dataGridViewDashboard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDashboard.Size = new System.Drawing.Size(1062, 287);
             this.dataGridViewDashboard.TabIndex = 0;
-            // 
-            // tBMOTOCLUBEBindingSource
-            // 
-            this.tBMOTOCLUBEBindingSource.DataMember = "TB_MOTO_CLUBE";
-            this.tBMOTOCLUBEBindingSource.DataSource = this.MOTOCLUBESet;
-            // 
-            // MOTOCLUBESet
-            // 
-            this.MOTOCLUBESet.DataSetName = "MOTOCLUBESet";
-            this.MOTOCLUBESet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridViewDashboard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDashboard_CellContentClick);
             // 
             // groupBoxDashboard
             // 
@@ -436,6 +429,16 @@
             this.labelNomeMotoClube.TabIndex = 0;
             this.labelNomeMotoClube.Text = "Nome Moto Clube";
             // 
+            // tBMOTOCLUBEBindingSource
+            // 
+            this.tBMOTOCLUBEBindingSource.DataMember = "TB_MOTO_CLUBE";
+            this.tBMOTOCLUBEBindingSource.DataSource = this.MOTOCLUBESet;
+            // 
+            // MOTOCLUBESet
+            // 
+            this.MOTOCLUBESet.DataSetName = "MOTOCLUBESet";
+            this.MOTOCLUBESet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -466,11 +469,11 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.tableLayoutPanelDashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDashboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBMOTOCLUBEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MOTOCLUBESet)).EndInit();
             this.groupBoxDashboard.ResumeLayout(false);
             this.groupBoxDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBMOTOCLUBEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MOTOCLUBESet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBMOTOCLUBEBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
