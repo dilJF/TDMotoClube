@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanelDashboard = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewDashboard = new System.Windows.Forms.DataGridView();
             this.groupBoxDashboard = new System.Windows.Forms.GroupBox();
@@ -63,6 +63,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tB_MOTO_CLUBETableAdapter = new TDMotoClube.MOTOCLUBESetTableAdapters.TB_MOTO_CLUBETableAdapter();
             this.tBMOTOCLUBEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ColumnCheckEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonExcluir = new System.Windows.Forms.Button();
             this.tableLayoutPanelDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDashboard)).BeginInit();
             this.groupBoxDashboard.SuspendLayout();
@@ -85,30 +87,36 @@
             this.tableLayoutPanelDashboard.RowCount = 2;
             this.tableLayoutPanelDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelDashboard.Size = new System.Drawing.Size(1068, 585);
+            this.tableLayoutPanelDashboard.Size = new System.Drawing.Size(1118, 578);
             this.tableLayoutPanelDashboard.TabIndex = 0;
             // 
             // dataGridViewDashboard
             // 
             this.dataGridViewDashboard.AllowUserToAddRows = false;
             this.dataGridViewDashboard.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewDashboard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dataGridViewDashboard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewDashboard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewDashboard.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDashboard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnCheckEdit});
             this.tableLayoutPanelDashboard.SetColumnSpan(this.dataGridViewDashboard, 2);
-            this.dataGridViewDashboard.Location = new System.Drawing.Point(3, 295);
+            this.dataGridViewDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewDashboard.Location = new System.Drawing.Point(3, 292);
             this.dataGridViewDashboard.MultiSelect = false;
             this.dataGridViewDashboard.Name = "dataGridViewDashboard";
-            this.dataGridViewDashboard.ReadOnly = true;
             this.dataGridViewDashboard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDashboard.Size = new System.Drawing.Size(1062, 287);
+            this.dataGridViewDashboard.ShowCellErrors = false;
+            this.dataGridViewDashboard.ShowCellToolTips = false;
+            this.dataGridViewDashboard.Size = new System.Drawing.Size(1112, 283);
             this.dataGridViewDashboard.TabIndex = 0;
             this.dataGridViewDashboard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDashboard_CellContentClick);
             // 
             // groupBoxDashboard
             // 
             this.tableLayoutPanelDashboard.SetColumnSpan(this.groupBoxDashboard, 2);
+            this.groupBoxDashboard.Controls.Add(this.buttonExcluir);
             this.groupBoxDashboard.Controls.Add(this.buttonLimpar);
             this.groupBoxDashboard.Controls.Add(this.buttonFechar);
             this.groupBoxDashboard.Controls.Add(this.buttonCadastrar);
@@ -137,7 +145,7 @@
             this.groupBoxDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDashboard.Location = new System.Drawing.Point(3, 3);
             this.groupBoxDashboard.Name = "groupBoxDashboard";
-            this.groupBoxDashboard.Size = new System.Drawing.Size(1062, 286);
+            this.groupBoxDashboard.Size = new System.Drawing.Size(1112, 283);
             this.groupBoxDashboard.TabIndex = 1;
             this.groupBoxDashboard.TabStop = false;
             this.groupBoxDashboard.Text = "Pesquisa";
@@ -158,7 +166,7 @@
             // 
             this.buttonFechar.BackColor = System.Drawing.Color.LightCoral;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFechar.Location = new System.Drawing.Point(981, 24);
+            this.buttonFechar.Location = new System.Drawing.Point(1031, 24);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(75, 26);
             this.buttonFechar.TabIndex = 23;
@@ -189,6 +197,7 @@
             this.buttonPesquisar.TabIndex = 11;
             this.buttonPesquisar.Text = "Pesquisar";
             this.buttonPesquisar.UseVisualStyleBackColor = false;
+            this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
             // 
             // labelListaIntegrantes
             // 
@@ -205,7 +214,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(533, 53);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(523, 227);
+            this.dataGridView2.Size = new System.Drawing.Size(573, 227);
             this.dataGridView2.TabIndex = 0;
             // 
             // labelEstado
@@ -376,6 +385,8 @@
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(161, 26);
             this.textBoxTelefone.TabIndex = 3;
+            this.textBoxTelefone.TextChanged += new System.EventHandler(this.textBoxTelefone_TextChanged);
+            this.textBoxTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelefone_KeyPress);
             // 
             // labelTelefone
             // 
@@ -453,13 +464,32 @@
             this.tBMOTOCLUBEBindingSource1.DataMember = "TB_MOTO_CLUBE";
             this.tBMOTOCLUBEBindingSource1.DataSource = this.MOTOCLUBESet;
             // 
+            // ColumnCheckEdit
+            // 
+            this.ColumnCheckEdit.HeaderText = "";
+            this.ColumnCheckEdit.MinimumWidth = 50;
+            this.ColumnCheckEdit.Name = "ColumnCheckEdit";
+            this.ColumnCheckEdit.Width = 50;
+            // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonExcluir.Enabled = false;
+            this.buttonExcluir.Location = new System.Drawing.Point(140, 238);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Size = new System.Drawing.Size(125, 42);
+            this.buttonExcluir.TabIndex = 24;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = false;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
+            // 
             // Dashboard
             // 
             this.AcceptButton = this.buttonPesquisar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1068, 585);
+            this.ClientSize = new System.Drawing.Size(1118, 578);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanelDashboard);
             this.MaximizeBox = false;
@@ -514,5 +544,7 @@
         private MOTOCLUBESetTableAdapters.TB_MOTO_CLUBETableAdapter tB_MOTO_CLUBETableAdapter;
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.BindingSource tBMOTOCLUBEBindingSource1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCheckEdit;
+        private System.Windows.Forms.Button buttonExcluir;
     }
 }
