@@ -280,7 +280,6 @@ namespace TDMotoClube
                 }
                 else
                 {
-                    MessageBox.Show("A pesquisa não retornou resultado!");
                     retornoPesquisa = false;
                 }
             }
@@ -301,7 +300,10 @@ namespace TDMotoClube
             desabilitaExcluir();
             if (verificaCamposPesquisa() == true)
             {
-                pesquisar(textBoxNomeMotoClube.Text, textBoxPresidente.Text);
+                if (pesquisar(textBoxNomeMotoClube.Text, textBoxPresidente.Text) == false)
+                {
+                    MessageBox.Show("A pesquisa não retornou resultado!");
+                }
             }
             else
             {
